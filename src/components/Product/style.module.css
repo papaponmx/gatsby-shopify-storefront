@@ -1,0 +1,29 @@
+.product {
+  display: flex;
+}
+
+.product__description {
+  margin-bottom: 1.5em;
+}
+
+.product__image {
+  width: 480px;
+}
+
+.product__images {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product__options {
+  display: flex;
+  gap: 1em;
+}
+
+.product__title {
+  font-size: 2rem;
+}

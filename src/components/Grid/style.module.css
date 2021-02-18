@@ -1,0 +1,9 @@
+.grid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.grid--full {
+  width: 100%;
+}

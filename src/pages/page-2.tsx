@@ -1,17 +1,22 @@
-/* eslint-disable no-unused-vars */
-import * as React from "react";
-import { Link } from "gatsby";
+import { Link, PageProps } from 'gatsby';
+import React, { FC } from 'react';
+import Grid from '../components/Grid';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+const SecondPage: FC<PageProps> = (props) => {
+  const { location } = props;
 
-const SecondPage = () => (
-	<Layout>
-		<SEO title="Page two" />
-		<h1>Hi from the second page</h1>
-		<p>Welcome to page 2</p>
-		<Link to="/">Go back to the homepage</Link>
-	</Layout>
-);
+  return (
+    <Layout location={location}>
+      <SEO title="Page two" />
+      <Grid>
+        <h1>Hi from the second page</h1>
+        <p>Welcome to page 2 ({props.path})</p>
+        <Link to="/">Go back to the homepage</Link>
+      </Grid>
+    </Layout>
+  );
+};
 
 export default SecondPage;

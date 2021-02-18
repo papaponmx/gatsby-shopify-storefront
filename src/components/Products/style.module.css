@@ -1,0 +1,24 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.products li {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px #ededed;
+  display: grid;
+  place-items: center;
+}
+
+.products li:first-child {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+}
+
+.products__title {
+  font-size: 6rem;
+  margin-bottom: 0.125em;
+}

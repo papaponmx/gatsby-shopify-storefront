@@ -8,16 +8,15 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 const query = graphql`
-query {
-  file(relativePath: { eq: "gatsby-astronaut.png" }) {
-    childImageSharp {
-      # Specify the image processing specifications right in the query.
-      # Makes it trivial to update as your page's design changes.
-      fixed(width: 125, height: 125) {
-        ...GatsbyImageSharpFixed
-      }
+  query {
+  image: file(relativePath: { eq: "puppy.jpg" }) {
+  childImageSharp {
+    fluid(maxWidth: 500, quality: 100) {
+      ...GatsbyImageSharpFluid
+      ...GatsbyImageSharpFluidLimitPresentationSize
     }
   }
+}
 }
 `;
 
@@ -32,7 +31,7 @@ const IndexPage: FC<PageProps> = (props) => {
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Img fixed={data.file.childImageSharp.fixed} />
+        <Img key={1} fluid={data.image.childImageSharp.fluid} />
         </div>
         <Link to="/page-2/">Go to page 2</Link>
       </Grid>

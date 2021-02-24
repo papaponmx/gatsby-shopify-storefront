@@ -40,6 +40,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write .",
     "serve": "gatsby serve",
+    "setup": "gatsby clean && rm -R node_modules package-lock.json yarn.lock ",
     "start": "npm run develop"
   },
   "repository": {

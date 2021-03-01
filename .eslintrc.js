@@ -22,5 +22,17 @@ module.exports = {
 		sourceType: "module"
 	},
 	plugins: ["@typescript-eslint"],
-	rules: {}
+	rules: {},
+  {
+    "overrides": [
+      {
+        "files": ["*.graphql"],
+        "parser": "@graphql-eslint/eslint-plugin",
+        "plugins": ["@graphql-eslint"],
+        "rules": {
+          ...
+        }
+      }
+    ]
+  }
 };

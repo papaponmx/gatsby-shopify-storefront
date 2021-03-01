@@ -28,6 +28,8 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          GATSBY_SHOPIFY_ACCESS_TOKEN: ${{ secrets.GATSBY_SHOPIFY_ACCESS_TOKEN }}
+          GATSBY_SHOPIFY_SHOP_NAME: ${{ secrets.GATSBY_SHOPIFY_SHOP_NAME }}
         with:
           args: deploy --dir=public --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'

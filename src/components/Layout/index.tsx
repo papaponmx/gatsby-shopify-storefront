@@ -10,44 +10,46 @@ import Logo from '../Logo';
 import Main from '../Main';
 import Navigation from '../Navigation';
 import styles from './style.module.css';
+import { GlobalStyles } from 'twin.macro';
 
 export interface LayoutProps {
-  location: WindowLocation<WindowLocation['state']>;
+	location: WindowLocation<WindowLocation['state']>;
 }
 
 const Layout: FC<LayoutProps> = (props) => {
-  const { children, location } = props;
-  const { shopifyShop } = useShopifyShop();
+	const { children, location } = props;
+	const { shopifyShop } = useShopifyShop();
 
-  const segments = location.pathname.split('/').filter((segment) => segment);
-  const breadcrumbItems = segments.map((segment, index) => {
-    const path = `/${segments.slice(0, index + 1).join('/')}`;
+	const segments = location.pathname.split('/').filter((segment) => segment);
+	const breadcrumbItems = segments.map((segment, index) => {
+		const path = `/${segments.slice(0, index + 1).join('/')}`;
 
-    return {
-      name: segment,
-      path,
-    };
-  });
+		return {
+			name: segment,
+			path
+		};
+	});
 
-  return (
-    <div className={styles.layout}>
-      <Header>
-        <Logo>{shopifyShop.name}</Logo>
-        <Navigation inline routes={MAIN} />
-      </Header>
-      <Main>
-        <Grid>
-          <Breadcrumb breadcrumbItems={breadcrumbItems} />
-        </Grid>
-        {children}
-      </Main>
-      <Footer>
-        <Grid>
-          <Navigation routes={FOOTER} />
-        </Grid>
-      </Footer>
-    </div>
-  );
+	return (
+		<div className={styles.layout}>
+			<GlobalStyles />
+				<Header>
+					<Logo>{shopifyShop.name}</Logo>
+					<Navigation inline routes={MAIN} />
+				</Header>
+				<Main>
+					<Grid>
+						<Breadcrumb breadcrumbItems={breadcrumbItems} />
+					</Grid>
+					{children}
+				</Main>
+				<Footer>
+					<Grid>
+						<Navigation routes={FOOTER} />
+					</Grid>
+				</Footer>
+		</div>
+	);
 };
 
 export default Layout;

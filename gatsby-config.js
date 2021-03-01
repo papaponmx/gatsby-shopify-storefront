@@ -21,6 +21,8 @@ const config = {
       },
     },
     'gatsby-transformer-sharp',
+    'gatsby-plugin-postcss',
+    `gatsby-plugin-styled-components`,
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',

@@ -1,5 +1,6 @@
-import React from 'react';
 import 'twin.macro';
+
+import React from 'react';
 
 const LandingPageHero : React.FC = (): JSX.Element => (
 	<div tw='grid grid-cols-1'>
@@ -12,7 +13,7 @@ const LandingPageHero : React.FC = (): JSX.Element => (
 				</button>
 			</div>
 			<div tw='lg:col-span-1 col-span-2 lg:h-screen h-56 w-screen max-w-full bg-pink-100' />
-			<div tw='flex flex-col justify-center items-center w-screen col-span-2 lg:invisible visible py-10'>
+			<div tw='bg-indigo-600 flex flex-col justify-center items-center w-screen col-span-2 visible py-10  lg:hidden'>
 				<button tw='bg-green-300 bg-opacity-30 text-gray-700 rounded-md w-52 py-4 '>Buy now</button>
 			</div>
 		</section>
